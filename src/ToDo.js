@@ -1,8 +1,8 @@
-import React from 'react'
+import { FaEdit, FaTrash } from 'react-icons/fa'
 
 function ToDo() {
   return (
-    <div>ToDo</div>
+    <h2>ToDo component</h2>
   )
 }
 
