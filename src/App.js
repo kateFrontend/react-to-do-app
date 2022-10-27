@@ -8,14 +8,17 @@ function App() {
   const [list, setList] = useState([]); // empty array that we'll use for local storage
   const [isEditing, setIsEditing] = useState(false); // a flag in a state whether is editing or not
   const [editID, setEditID] = useState(null); // this state will reflect which ite is actually editing
-  const [alert, setAlert] = useState({ show: false, msg: "", type: "" }); // is an object from we can display alert information
+  const [alert, setAlert] = useState({
+    show: false,
+    msg: "",
+    type: "" }); // is an object from we can display alert information
 
   const handleSubmit = (e) => {
     e.preventDefault(); // the preventDefault() method cancels the event if it is cancelable, meaning that the default action that belongs to the event will not occur. // clicking on a "Submit" button, prevent it from submitting a form
     //  console.log('hello');
     if (!name) {
       // check if the value in input is empty and if is empty then display the alert
-      // display alert
+      showAlert(true, 'danger', 'please enter value') // display alert
     } else if (name && isEditing) {
       // check if there's something in the value and if the editing is true
       // deal with edit
@@ -31,12 +34,16 @@ function App() {
     }
   };
 
+  const showAlert = (show=false, type="", msg="") => { // parameters by default
+    setAlert({show, type, msg}) // if the property name matches to the variable name that holds the value then show and type an message
+  }
+
   return (
     <div>
       <h1 className="title-center">To-do list</h1>
       <section className="section-center">
         <form className="todo-form" onSubmit={handleSubmit}>
-          {alert.show && <Alert />}{" "}
+          {alert.show && <Alert {...alert} />} {/* inside of alert component pass all the properties from state alert value */}
           {/* show some checking for the proprety of show more specific for the value and if that is the case - display it // you can check it if you change useState for alert to show:true // The logical AND (&&) operator for a set of boolean operands will be true if and only if all the operands are true. Otherwise it will be false. */}
           <div className="form-control">
             <input
