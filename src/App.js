@@ -43,7 +43,7 @@ function App() {
       <h1 className="title-center">To-do list</h1>
       <section className="section-center">
         <form className="todo-form" onSubmit={handleSubmit}>
-          {alert.show && <Alert {...alert} />} {/* inside of alert component pass all the properties from state alert value */}
+          {alert.show && <Alert {...alert} removeAlert={showAlert} />} {/* inside of alert component pass all the properties from state alert value */}
           {/* show some checking for the proprety of show more specific for the value and if that is the case - display it // you can check it if you change useState for alert to show:true // The logical AND (&&) operator for a set of boolean operands will be true if and only if all the operands are true. Otherwise it will be false. */}
           <div className="form-control">
             <input
