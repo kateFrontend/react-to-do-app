@@ -1,5 +1,5 @@
 <div>
-  <h1>To_Do react app</h1> 
+  <h1>To-Do react app</h1> 
   <img src="" alt="" width="auto">
 </div>
 
