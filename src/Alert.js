@@ -1,9 +1,7 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from "react";
 
 function Alert() {
-  return (
-    <h2>Alert component</h2>
-  )
+  return <h2>Alert component</h2>;
 }
 
-export default Alert
+export default Alert;

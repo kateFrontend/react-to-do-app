@@ -264,6 +264,16 @@ Grocery List
   letter-spacing: 2px;
   transition: var(--transition);
 }
+
+.title-center {
+  color: var(--clr-grey-1);
+  letter-spacing: 2px;
+  transition: var(--transition);
+  display: flex;
+  justify-content: center;
+  margin-top: 10rem;
+}
+
 .edit-btn,
 .delete-btn {
   background: transparent;

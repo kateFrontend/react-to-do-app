@@ -1,9 +1,26 @@
-import { FaEdit, FaTrash } from 'react-icons/fa'
+import { FaEdit, FaTrash } from "react-icons/fa";
 
-function ToDo() {
+function ToDo({ items }) { // structure props from App.js in a function parameters
   return (
-    <h2>ToDo component</h2>
-  )
+    <div className="todo">
+      {items.map((item) => {
+        const { id, title } = item;
+        return (
+          <article key={id} className="todo-item">
+            <p className="title">{title}</p>
+              <div className="btn-container">
+                <button type="button" className="edit-btn">
+                  <FaEdit />
+                </button>
+                <button type="button" className="delete-btn">
+                  <FaTrash />
+                </button>
+              </div>
+          </article>
+        );
+      })}
+    </div>
+  );
 }
 
-export default ToDo
+export default ToDo;
