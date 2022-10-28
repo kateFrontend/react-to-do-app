@@ -24,8 +24,8 @@ function App() {
       // deal with edit
     } else {
       // show alert
-      const newItem = {
-        // create a new item is equil to the object with an unique ID and a title tht will be equil to the name value that is coming from the state
+      showAlert(true, 'success', 'item added to the list')
+      const newItem = { // create a new item is equil to the object with an unique ID and a title tht will be equil to the name value that is coming from the state
         id: new Date().getTime().toString(),
         title: name,
       };
@@ -37,6 +37,11 @@ function App() {
   const showAlert = (show=false, type="", msg="") => { // parameters by default
     setAlert({show, type, msg}) // if the property name matches to the variable name that holds the value then show and type an message
   }
+
+  const clearList = () => {
+    showAlert(true, 'danger', 'empty list');
+    setList([]);
+  };
 
   return (
     <div>
@@ -62,7 +67,7 @@ function App() {
         {list.length > 0 && (
                   <div className="todo-container">
                   <ToDo items={list} /> {/* list as a prop into Todo component named 'items' */}
-                  <button className="clear-btn">clear items</button>
+                  <button className="clear-btn" onClick={clearList}>clear items</button>
                 </div>
         )}
       </section>
