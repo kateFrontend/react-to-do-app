@@ -1,6 +1,6 @@
 import { FaEdit, FaTrash } from "react-icons/fa";
 
-function ToDo({ items, removeItem }) {
+function ToDo({ items, removeItem, editItem }) {
   // structure props from App.js in a function parameters
   return (
     <div className="todo">
@@ -10,7 +10,11 @@ function ToDo({ items, removeItem }) {
           <article key={id} className="todo-item">
             <p className="title">{title}</p>
             <div className="btn-container">
-              <button type="button" className="edit-btn">
+              <button
+                type="button"
+                className="edit-btn"
+                onClick={() => editItem(id)}
+              >
                 <FaEdit />
               </button>
               <button

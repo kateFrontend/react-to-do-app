@@ -21,7 +21,17 @@ function App() {
       showAlert(true, 'danger', 'please enter value') // display alert
     } else if (name && isEditing) {
       // check if there's something in the value and if the editing is true
-      // deal with edit
+      setList(list.map((item) => { // we have our list and we're iterating over it
+        if(item.id === editID) { // if the item Id matches to whatever we have in a state, the return all the propreties
+          return {...item,title:name} // return Id and change the title to whatever is the state
+        }
+        return item
+      })
+      )
+      setName('');
+      setEditID(null);
+      setIsEditing(false);
+      showAlert(true, 'success', 'value changed')
     } else {
       // show alert
       showAlert(true, 'success', 'new task added to the list')
@@ -48,6 +58,13 @@ function App() {
     setList(list.filter((item) => item.id !== id)) // list filter always return a new array / if item Id matches to whatever idea passed into remove item, then don't return it from thos filter function. If item Id doesn't match, then it's going to be added to the new array
   }
 
+  const editItem = (id) => { // get a specific item whose Id matches
+    const specificItem = list.find((item) => item.id === id) // if the item Id matches, then return that item
+    setIsEditing(true);
+    setEditID(id);
+    setName(specificItem.title) 
+  }
+
   return (
     <div>
       <h1 className="title-center">To-do list</h1>
@@ -71,7 +88,7 @@ function App() {
         </form>
         {list.length > 0 && (
                   <div className="todo-container">
-                  <ToDo items={ list } removeItem={ removeItem } /> {/* list as a prop into Todo component named 'items' */}
+                  <ToDo items={ list } removeItem={ removeItem } editItem={ editItem } /> {/* list as a prop into Todo component named 'items' */}
                   <button className="clear-btn" onClick={clearList}>clear items</button>
                 </div>
         )}
