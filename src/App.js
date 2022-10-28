@@ -24,7 +24,7 @@ function App() {
       // deal with edit
     } else {
       // show alert
-      showAlert(true, 'success', 'item added to the list')
+      showAlert(true, 'success', 'new task added to the list')
       const newItem = { // create a new item is equil to the object with an unique ID and a title tht will be equil to the name value that is coming from the state
         id: new Date().getTime().toString(),
         title: name,
@@ -43,18 +43,23 @@ function App() {
     setList([]);
   };
 
+  const removeItem = (id) => {
+    showAlert(true, 'danger', 'task removed');
+    setList(list.filter((item) => item.id !== id)) // list filter always return a new array / if item Id matches to whatever idea passed into remove item, then don't return it from thos filter function. If item Id doesn't match, then it's going to be added to the new array
+  }
+
   return (
     <div>
       <h1 className="title-center">To-do list</h1>
       <section className="section-center">
         <form className="todo-form" onSubmit={handleSubmit}>
-          {alert.show && <Alert {...alert} removeAlert={showAlert} />} {/* inside of alert component pass all the properties from state alert value */}
+          {alert.show && <Alert {...alert} removeAlert={showAlert} list={list} />} {/* inside of alert component pass all the properties from state alert value */}
           {/* show some checking for the proprety of show more specific for the value and if that is the case - display it // you can check it if you change useState for alert to show:true // The logical AND (&&) operator for a set of boolean operands will be true if and only if all the operands are true. Otherwise it will be false. */}
           <div className="form-control">
             <input
               type="text"
               className="todo"
-              placeholder="ex. read a book"
+              placeholder="Enter a new task to do"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
@@ -66,7 +71,7 @@ function App() {
         </form>
         {list.length > 0 && (
                   <div className="todo-container">
-                  <ToDo items={list} /> {/* list as a prop into Todo component named 'items' */}
+                  <ToDo items={ list } removeItem={ removeItem } /> {/* list as a prop into Todo component named 'items' */}
                   <button className="clear-btn" onClick={clearList}>clear items</button>
                 </div>
         )}

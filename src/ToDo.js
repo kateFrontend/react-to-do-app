@@ -1,6 +1,7 @@
 import { FaEdit, FaTrash } from "react-icons/fa";
 
-function ToDo({ items }) { // structure props from App.js in a function parameters
+function ToDo({ items, removeItem }) {
+  // structure props from App.js in a function parameters
   return (
     <div className="todo">
       {items.map((item) => {
@@ -8,14 +9,18 @@ function ToDo({ items }) { // structure props from App.js in a function paramete
         return (
           <article key={id} className="todo-item">
             <p className="title">{title}</p>
-              <div className="btn-container">
-                <button type="button" className="edit-btn">
-                  <FaEdit />
-                </button>
-                <button type="button" className="delete-btn">
-                  <FaTrash />
-                </button>
-              </div>
+            <div className="btn-container">
+              <button type="button" className="edit-btn">
+                <FaEdit />
+              </button>
+              <button
+                type="button"
+                className="delete-btn"
+                onClick={() => removeItem(id)}
+              >
+                <FaTrash />
+              </button>
+            </div>
           </article>
         );
       })}
