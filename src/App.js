@@ -3,9 +3,21 @@ import Alert from "./Alert";
 import "./App.css";
 import ToDo from "./ToDo";
 
+// We need to have a localStorage to not lose all values after refreshing the page
+
+const getLocalStorage = () => {
+  let list = localStorage.getItem('list');
+  if(list) {
+    return JSON.parse(localStorage.getItem('list'))
+  }
+  else{
+    return []
+  }
+}
+
 function App() {
   const [name, setName] = useState(""); // value that we'll use in our form / the empty value by default
-  const [list, setList] = useState([]); // empty array that we'll use for local storage
+  const [list, setList] = useState(getLocalStorage()); // empty array that we'll use for local storage // local storage list
   const [isEditing, setIsEditing] = useState(false); // a flag in a state whether is editing or not
   const [editID, setEditID] = useState(null); // this state will reflect which ite is actually editing
   const [alert, setAlert] = useState({
@@ -64,6 +76,10 @@ function App() {
     setEditID(id);
     setName(specificItem.title) 
   }
+
+  useEffect(() => {
+    localStorage.setItem('list', JSON.stringify(list))
+  },[list])
 
   return (
     <div>
