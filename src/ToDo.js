@@ -3,7 +3,7 @@ import { FaEdit, FaTrash } from "react-icons/fa";
 function ToDo({ items, removeItem, editItem }) {
   // structure props from App.js in a function parameters
   return (
-    <div className="todo">
+    <div className="todo-task">
       {items.map((item) => {
         const { id, title } = item;
         return (
@@ -15,14 +15,14 @@ function ToDo({ items, removeItem, editItem }) {
                 className="edit-btn"
                 onClick={() => editItem(id)}
               >
-                <FaEdit />
+                <FaEdit className="icons"/>
               </button>
               <button
                 type="button"
                 className="delete-btn"
                 onClick={() => removeItem(id)}
               >
-                <FaTrash />
+                <FaTrash className="icons" />
               </button>
             </div>
           </article>
