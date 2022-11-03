@@ -136,11 +136,7 @@ p {
   max-width: 35rem;
   margin-top: 8rem;
 }
-@media screen and (min-width: 992px) {
-  .section-center {
-    width: 95vw;
-  }
-}
+
 main {
   min-height: 100vh;
   display: grid;
@@ -156,12 +152,10 @@ Grocery List
   border-radius: var(--radius);
   box-shadow: var(--light-shadow);
   transition: var(--transition);
-  padding: 2rem;
-
-}
-.section-center:hover {
+  padding: 3rem 1rem;
   box-shadow: var(--dark-shadow);
 }
+
 .alert {
   margin: 1rem 0 2rem 0;
   height: 2rem;
@@ -187,8 +181,7 @@ Grocery List
   justify-content: center;
 }
 .todo {
-  padding: 0.25rem;
-  padding-left: 1rem;
+  padding: 0.5rem 1rem;
   background: var(--clr-grey-10);
   border-top-left-radius: var(--radius);
   border-bottom-left-radius: var(--radius);
@@ -196,10 +189,12 @@ Grocery List
   font-size: 1.2rem;
   flex: 1 0 auto;
   color: var(--clr-grey-5);
+  border: 1px solid var(--dark-yellow)
 }
 .todo::placeholder {
   color: var(--clr-grey-5);
 }
+
 
 .todo-task {
   padding: 0.25rem;
@@ -313,3 +308,24 @@ Grocery List
   color: var(--clr-white);
 }
 
+@media all and (min-width: 992px) {
+  .section-center {
+    width: 95vw;
+    
+  }
+}
+
+@media all and (max-width: 500px) {
+  .section-center {
+    width: 100vw;
+  }
+
+  .todo {
+    font-size: 1rem;
+  }
+
+  .icons {
+    width: 1.5rem;
+  }
+  
+}
