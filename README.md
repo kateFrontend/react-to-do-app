@@ -1,6 +1,6 @@
 <div>
   <h1>To-Do react app</h1> 
-  <img src="" alt="" width="auto">
+  <img src="todo.jpg" alt="" width="auto">
 </div>
 
 <!-- ABOUT THE PROJECT -->
