@@ -20,7 +20,7 @@
 ## Usage
 
 <p></p>
-<p></p>
+<p>User can type what he wants to do today into the input field and press Submit button or hit Enter.</p>
 <p></p>
 <p></p>
 <p></p>
