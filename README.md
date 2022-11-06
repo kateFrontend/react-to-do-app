@@ -21,7 +21,7 @@
 
 <p></p>
 <p>User can type what he wants to do today into the input field and press Submit button or hit Enter.</p>
-<p></p>
+<p>Once user submitted an item, he will see it appear as an entry.</p>
 <p></p>
 <p></p>
 
