@@ -1,16 +1,16 @@
-<div>
-  <h1>To-Do react app</h1> 
-  <img src="todo.jpg" alt="" width="auto">
-</div>
+![cover](./todo.jpg)
+<center> View Demo <a href="https://react-todo-ap.netlify.app/" target="_blank">ToDo React App</a> </center>
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
-<p>A simple but very useful To-Do List React app with all the necessary comments</p>
-<p></p>
+## 🦉 Main information
 
-  <p>
-  <!--  <a href="№">View Demo Here</a> -->
-  </p>
+ToDo app is an app that allows users to add, edit, and delete tasks they want to work on. These actions touch upon the four aspects of a CRUD (Create, Read, Update, and Delete) application.
+
+This application integrate React useState and useEffect Hooks. React Hooks allow for functional components to have a state and use lifecycle methods, allowing you to avoid using class components and have more modular and readable code.
+
+ToDo app is an excellent app to practice hooks, state, style and data manipulation.
+
+Here you can find the sourse code with all the necessary and useful comments.
+
 
 ## Built With
 
