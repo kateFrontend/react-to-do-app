@@ -11,18 +11,32 @@ ToDo app is an excellent app to practice hooks, state, style and data manipulati
 
 Here you can find the sourse code with all the necessary and useful comments.
 
-
 ## Built With
 
 [React](https://reactjs.org/) / [JavaScript](https://www.w3schools.com/js/)
  
-<!-- USAGE EXAMPLES -->
-## Usage
+## ⏲️ Run project
 
-<p></p>
-<p>User can type what he wants to do today into the input field and press Submit button or hit Enter.</p>
-<p>Once user submitted an item, he will see it appear as an entry.</p>
-<p></p>
-<p></p>
+In the project directory, you can run:
 
-Project Link: https://github.com/kateFrontend/To-do-react
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
+
+## ⚡ Setup
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
+
+The following technologies and components were used in this project:
+
+### Create React app
+
+```
+npx create-react-app my-app
+cd my-app
+npm start
+```
